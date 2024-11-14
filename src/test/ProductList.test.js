@@ -74,7 +74,7 @@ describe('ProductList Component', () => {
         status: 'failed',
         error: 'Failed to fetch products',
       },
-    });
+    });   
 
     render(
       <Provider store={store}>
