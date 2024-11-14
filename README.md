@@ -38,12 +38,18 @@ This is a product management dashboard built with React and Redux Toolkit. The a
 
 p.s : used npx create-react-app product-dashboard to create my project so may have some extra files. 
 ## Setup & Run Guide
-run The following commands :
+run The following commands to get the project runing  :
+
 cd product-dashboard 
+
 npm run build
+
 npm start
-to run the project .
-To get the DB up and runing use :json-server --watch db.json --port 5000
+
+
+To get the DB up and runing use :
+
+json-server --watch db.json --port 5000
 1. **Clone the repository**:
    git clone https://github.com/TovaGeisler/Product-Management-Dashboard/tree/HY
 
