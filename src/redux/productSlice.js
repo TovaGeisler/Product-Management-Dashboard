@@ -5,12 +5,8 @@ import { fetchProductsApi } from '../utils/api';
 export const fetchProducts = createAsyncThunk('products/fetchProducts', async () => {
   try {
     const response = await fetchProductsApi();
-    // Ensure response data is in the correct format
-    debugger; // Execution will pause here
-    console.log(response.data);
-    if (!response || !response.data) {
-      throw new Error('No products data found');
-    }
+    if (!response.data)
+      return("Api did not return any data")
     return response.data;  // Assuming response.data is an array of products
   } catch (error) {
     // Handle any errors, including network or API issues
@@ -42,7 +38,7 @@ const productSlice = createSlice({
       })
       .addCase(fetchProducts.fulfilled, (state, action) => {
         state.status = 'succeeded';
-        state.items = action.payload.products || []; // Access the "products" array directly
+        state.items = action.payload;  // Access the "products" array directly
       })
       .addCase(fetchProducts.rejected, (state, action) => {
         state.status = 'failed';
